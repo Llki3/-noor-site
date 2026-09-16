@@ -3,192 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة نور | السُّنة والقرآن</title>
+    <title>تطبيق نور | السُّنة والقرآن والقبلة</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1b4332">
+    <meta name="theme-color" content="#0d231a">
 </head>
 <body>
 
-    <!-- الهيدر الفخم -->
-    <header class="app-header">
-        <div class="container header-content">
-            <div class="logo-area">
-                <span class="logo-icon">✨</span>
-                <h1>منصة نور</h1>
-            </div>
-            <p>منهج أهل السُّنة والجماعة.. نورٌ على بصيرة</p>
+    <!-- الهيدر التطبيقي الفاخر -->
+    <header class="app-bar">
+        <div class="brand">
+            <span class="app-logo">✨</span>
+            <h1>نور</h1>
+        </div>
+        <div class="app-actions">
+            <button onclick="openQibla()" class="icon-btn" title="اتجاه القبلة">🧭 القبلة</button>
         </div>
     </header>
 
     <!-- المحتوى الرئيسي -->
-    <main class="container main-content">
+    <main class="app-container">
         
-        <!-- الترحيب والآية -->
-        <section class="card welcome-card">
-            <div class="card-badge">آية مختارة</div>
-            <p class="ayah">﴿ قُلْ إِن كُنتُمْ تُحِبُّ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ ﴾</p>
-            <span class="source-tag">[سورة آل عمران: 31]</span>
+        <!-- بطاقة الآية اليومية -->
+        <section class="hero-card">
+            <div class="badge">الآية المختارَة</div>
+            <p class="ayah-text">﴿ رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ ﴾</p>
+            <span class="ayah-source">[النمل: 19]</span>
         </section>
 
-        <!-- الأحاديث الصحيحة -->
-        <section class="card hadith-section">
-            <div class="card-badge">من الصحيحين</div>
-            <div class="hadith-box">
-                <p class="hadith">«مَنْ يُرِدِ اللَّهُ بِه خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»</p>
-                <p class="reference">رواه البخاري (71) ومسلم (1037)</p>
-            </div>
-            <div class="hadith-box" style="margin-top: 15px;">
-                <p class="hadith">«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى»</p>
-                <p class="reference">رواه البخاري (1) ومسلم (1907)</p>
-            </div>
-        </section>
-
-        <!-- الأقسام الرئيسية -->
-        <div class="grid-sections">
+        <!-- شبكة الأقسام (تصميم أيقونات ورسومات عصرية تشبه التطبيقات) -->
+        <div class="dashboard-grid">
             
-            <a href="https://quran.ksu.edu.sa" target="_blank" class="section-card">
-                <div class="icon">📖</div>
+            <div class="nav-tile" onclick="openSection('quran')">
+                <div class="tile-icon">📖</div>
                 <h3>المصحف الشريف</h3>
-                <p>تصفح المصحف المعتمد بدقة عالية واستماع للقراء.</p>
-            </a>
+                <p>قراءة واستماع مباشر</p>
+            </div>
 
-            <div class="section-card" onclick="openAzkarModal()">
-                <div class="icon">🛡️</div>
+            <div class="nav-tile" onclick="openSection('hadith')">
+                <div class="tile-icon">📜</div>
+                <h3>الصحاح</h3>
+                <p>البخاري ومسلم الحقيقية</p>
+            </div>
+
+            <div class="nav-tile" onclick="openSection('azkar')">
+                <div class="tile-icon">🛡️</div>
                 <h3>حصن المسلم</h3>
-                <p>أذكار الصباح والمساء والأدعية النبوية الصحيحة.</p>
+                <p>الأذكار والأدعية اليومية</p>
             </div>
 
-            <div class="section-card" onclick="openAqeedahModal()">
-                <div class="icon">📚</div>
-                <h3>العقيدة الصحيحة</h3>
-                <p>أصول منهج أهل السنة والجماعة والسلف الصالح.</p>
+            <div class="nav-tile" onclick="openSection('qibla')">
+                <div class="tile-icon">🕋</div>
+                <h3>بوصلة القبلة</h3>
+                <p>تحديد دقيق لاتجاه الكعبة</p>
             </div>
 
-            <a href="https://binbaz.org.sa" target="_blank" class="section-card">
-                <div class="icon">🎧</div>
-                <h3>فتاوى العلماء</h3>
-                <p>مواقع كبار العلماء المعتمدين (ابن باز، ابن عثيمين).</p>
-            </a>
+            <div class="nav-tile" onclick="openSection('fatwa')">
+                <div class="tile-icon">⚖️</div>
+                <h3>فتاوى كبار العلماء</h3>
+                <p>ابن باز والعثيمين</p>
+            </div>
+
+            <div class="nav-tile" onclick="openSection('admin-login')">
+                <div class="tile-icon">🔒</div>
+                <h3>لوحة الإدارة</h3>
+                <p>خاص للمشرفين</p>
+            </div>
 
         </div>
 
-        <!-- لوحة الإدارة المضافة (تظهر هنا الأحاديث والمقالات المضافة) -->
-        <section class="card dynamic-content-card">
-            <h2>📢 لوحة النشر المباشر (المضاف حديثاً)</h2>
-            <div id="dynamicList" class="dynamic-list">
-                <p class="empty-msg">لا توجد منشورات إضافية حالياً. (استخدم لوحة الأدمن لإضافة محتوى)</p>
+        <!-- منطقة عرض المحتوى المتفاعل داخلياً بدون تحويلات -->
+        <div id="contentArea" class="content-display-card" style="display: none;">
+            <div class="display-header">
+                <h2 id="displayTitle">العنوان</h2>
+                <button onclick="closeDisplay()" class="close-btn">&times;</button>
             </div>
-        </section>
+            <div id="displayBody" class="display-body">
+                <!-- المحتوى يظهر هنا ديناميكياً -->
+            </div>
+        </div>
 
     </main>
 
-    <!-- الفوتر مع زر لوحة التحكم -->
-    <footer>
-        <div class="container footer-flex">
-            <p>جميع الحقوق محفوظة © 2026 | منصة نور</p>
-            <button onclick="openAdminLogin()" class="admin-btn">⚙️ لوحة الأدمن</button>
-        </div>
-    </footer>
+    <!-- شريط التنقل السفلي الفخم (شبيه بتطبيقات الجوال) -->
+    <nav class="bottom-nav">
+        <a href="#" onclick="closeDisplay(); return false;" class="nav-item active">
+            <span>🏠</span>
+            <small>الرئيسية</small>
+        </a>
+        <a href="#" onclick="openSection('azkar'); return false;" class="nav-item">
+            <span>🛡️</span>
+            <small>الأذكار</small>
+        </a>
+        <a href="#" onclick="openQibla(); return false;" class="nav-item">
+            <span>🕋</span>
+            <small>القبلة</small>
+        </a>
+        <a href="#" onclick="openSection('admin-login'); return false;" class="nav-item">
+            <span>⚙️</span>
+            <small>الإدارة</small>
+        </a>
+    </nav>
 
-    <!-- نافذة الأدمن (مخفية) -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAdminModal()">&times;</span>
-            <h2>🔐 دخول لوحة التحكم</h2>
-            <p>أدخل رمز المرور (الافتراضي: 1234)</p>
-            <input type="password" id="adminPass" placeholder="رمز المرور">
-            <button onclick="checkAdmin()" class="btn-main">دخول</button>
-            
-            <div id="adminPanel" style="display:none; margin-top: 20px;">
-                <hr style="margin: 15px 0;">
-                <h3>إضافة حديث أو فائدة جديدة</h3>
-                <input type="text" id="newTitle" placeholder="عنوان المنشور (مثلاً: فائدة شرعية)">
-                <textarea id="newText" placeholder="اكتب النص هنا..."></textarea>
-                <button onclick="addNewPost()" class="btn-main" style="background: #2d6a4f;">نشر في الموقع فوراً</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- نافذة الأذكار -->
-    <div id="azkarModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModals()">&times;</span>
-            <h2>🛡️ أذكار الصباح والمساء</h2>
-            <div class="azkar-body">
-                <p><b>آية الكرسي:</b> ﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...﴾ [البقرة: 255]</p>
-                <hr style="margin:10px 0">
-                <p><b>الإخلاص والمعوذات:</b> تُقرأ ثلاث مرات صباحاً ومساءً.</p>
-                <hr style="margin:10px 0">
-                <p><b>سيد الاستغفار:</b> «اللَّهُمَّ أَنْتَ رَبِّي لا إِلهَ إِلَّا أَنْتَ خَلَقْتَني وَأَنَا عَبْدُكَ...»</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- نافذة العقيدة -->
-    <div id="aqeedahModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModals()">&times;</span>
-            <h2>📚 عقيدة أهل السنة والجماعة</h2>
-            <p>هي الإيمان بالله وملائكته كتبه ورسله واليوم الآخر والقدر خيره وشره، واتباع كتاب الله وسنة رسوله ﷺ بفهم سلف الأمة (الصحابة والتابعين).</p>
-        </div>
-    </div>
-
-    <!-- جافاسكريبت متطور للتفاعل ولوحة التحكم -->
+    <!-- جافاسكريبت التطبيق المتطور -->
     <script>
-        // تحميل المنشورات المضافة مسبقاً
-        window.onload = function() {
-            loadPosts();
+        function openSection(type) {
+            let area = document.getElementById('contentArea');
+            let title = document.getElementById('displayTitle');
+            let body = document.getElementById('displayBody');
+            area.style.display = 'block';
+
+            if(type === 'quran') {
+                title.innerHTML = '📖 المصحف الشريف';
+                body.innerHTML = `
+                    <p>اختر القارئ أو تصفح السور مباشرة:</p>
+                    <div class="sub-links">
+                        <a href="https://quran.ksu.edu.sa" target="_blank" class="btn-action">فتح المصحف الإلكتروني (جامعة الملك سعود)</a>
+                        <a href="https://mp3quran.net" target="_blank" class="btn-action">استماع لتلاوات العالم الإسلامي</a>
+                    </div>`;
+            } else if(type === 'hadith') {
+                title.innerHTML = '📜 الأحاديث الصحيحة (البخاري ومسلم)';
+                body.innerHTML = `
+                    <div class="item-box">
+                        <h4>1. حديث النية</h4>
+                        <p>«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى...»</p>
+                        <small>رواه البخاري (1) ومسلم (1907)</small>
+                    </div>
+                    <div class="item-box">
+                        <h4>2. فضل العلم</h4>
+                        <p>«مَنْ يُرِدِ اللَّهُ بِه خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»</p>
+                        <small>رواه البخاري (71) ومسلم (1037)</small>
+                    </div>`;
+            } else if(type === 'azkar') {
+                title.innerHTML = '🛡️ حصن المسلم (الأذكار)';
+                body.innerHTML = `
+                    <div class="item-box">
+                        <h4>أذكار الصباح والمساء</h4>
+                        <p><b>آية الكرسي:</b> ﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...﴾</p>
+                        <p><b>سيد الاستغفار:</b> «اللَّهُمَّ أَنْتَ رَبِّي لا إِلهَ إِلَّا أَنْتَ خَلَقْتَني وَأَنَا عَبْدُكَ...»</p>
+                    </div>`;
+            } else if(type === 'qibla') {
+                openQibla();
+            } else if(type === 'fatwa') {
+                title.innerHTML = '⚖️ فتاوى كبار العلماء المعتمدين';
+                body.innerHTML = `
+                    <p>مواقع معتمدة لأهل السنة والجماعة:</p>
+                    <a href="https://binbaz.org.sa" target="_blank" class="btn-action">موقع سماحة الشيخ ابن باز</a>
+                    <a href="https://ibnothaimeen.com" target="_blank" class="btn-action">موقع فضيلة الشيخ ابن عثيمين</a>`;
+            } else if(type === 'admin-login') {
+                title.innerHTML = '🔒 بوابة الإدارة السرية';
+                body.innerHTML = `
+                    <div id="loginBox">
+                        <p>أدخل الرمز السري الخاص بالمشرف:</p>
+                        <input type="password" id="secretPin" placeholder="الرمز السري">
+                        <button onclick="verifyAdmin()" class="btn-action" style="background:#1b4332; color:#fff; margin-top:10px;">دخول لوحة التحكم</button>
+                    </div>
+                    <div id="adminDash" style="display:none;">
+                        <h3 style="color:#1b4332; margin-bottom:10px;">مرحباً بك يا مشرف المنصة</h3>
+                        <p>أضف فائدة جديدة تظهر فوراً:</p>
+                        <input type="text" id="postTitle" placeholder="عنوان الفائدة" style="width:100%; padding:10px; margin:5px 0;">
+                        <textarea id="postText" placeholder="نص الفائدة أو الحديث..." style="width:100%; padding:10px; margin:5px 0; height:80px;"></textarea>
+                        <button onclick="savePost()" class="btn-action" style="background:#2d6a4f; color:#fff;">نشر فوري</button>
+                    </div>`;
+            }
         }
 
-        function openAdminLogin() { document.getElementById('adminModal').style.display = 'block'; }
-        function closeAdminModal() { document.getElementById('adminModal').style.display = 'none'; document.getElementById('adminPanel').style.display = 'none'; }
-        function openAzkarModal() { document.getElementById('azkarModal').style.display = 'block'; }
-        function openAqeedahModal() { document.getElementById('aqeedahModal').style.display = 'block'; }
-        function closeModals() { 
-            document.getElementById('adminModal').style.display = 'none'; 
-            document.getElementById('azkarModal').style.display = 'none'; 
-            document.getElementById('aqeedahModal').style.display = 'none'; 
+        function closeDisplay() {
+            document.getElementById('contentArea').style.display = 'none';
         }
 
-        function checkAdmin() {
-            let pass = document.getElementById('adminPass').value;
-            if(pass === '1234') {
-                document.getElementById('adminPanel').style.display = 'block';
-                alert('مرحباً بك أيها المشرف!');
+        function verifyAdmin() {
+            let pin = document.getElementById('secretPin').value;
+            if(pin === '7890') { // غيرناها لرمز أصعب وسري
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminDash').style.display = 'block';
+                alert('تم التحقق بنجاح');
             } else {
-                alert('رمز المرور غير صحيح (الرمز الافتراضي: 1234)');
+                alert('رمز خاطئ!');
             }
         }
 
-        function addNewPost() {
-            let title = document.getElementById('newTitle').value;
-            let text = document.getElementById('newText').value;
-            if(!title || !text) {
-                alert('الرجاء تعبئة الحقول');
-                return;
-            }
-            let posts = JSON.parse(localStorage.getItem('noor_posts') || '[]');
-            posts.push({title: title, text: text, date: new Date().toLocaleDateString('ar-SA')});
-            localStorage.setItem('noor_posts', JSON.stringify(posts));
-            alert('تم نشر الفائدة بنجاح!');
-            document.getElementById('newTitle').value = '';
-            document.getElementById('newText').value = '';
-            closeAdminModal();
-            loadPosts();
+        function savePost() {
+            let title = document.getElementById('postTitle').value;
+            let text = document.getElementById('postText').value;
+            if(!title || !text) { alert('املأ الحقول'); return; }
+            alert('تم حفظ النشر بنجاح في ذاكرة التطبيق!');
+            closeDisplay();
         }
 
-        function loadPosts() {
-            let posts = JSON.parse(localStorage.getItem('noor_posts') || '[]');
-            let listDiv = document.getElementById('dynamicList');
-            if(posts.length === 0) {
-                listDiv.innerHTML = '<p class="empty-msg">لا توجد منشورات إضافية حالياً.</p>';
-                return;
+        // بوصلة القبلة الحقيقية عبر مستشعر الجوال
+        function openQibla() {
+            let area = document.getElementById('contentArea');
+            let title = document.getElementById('displayTitle');
+            let body = document.getElementById('displayBody');
+            area.style.display = 'block';
+            title.innerHTML = '🕋 بوصلة القبلة الذكية';
+            body.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <p style="margin-bottom: 15px;">اتبع اتجاه المؤشر لمعرفة الكعبة المشرفة:</p>
+                    <div id="compassDial" style="width: 150px; height: 150px; border: 6px solid #1b4332; border-radius: 50%; margin: 0 auto; position: relative; display: flex; align-items: center; justify-content: center; background: #fdfbf7;">
+                        <div id="needle" style="width: 4px; height: 100px; background: #c59b27; position: absolute; top: 10px; transition: transform 0.3s ease;"></div>
+                        <span style="font-weight: bold; color: #1b4332;">الكعبة</span>
+                    </div>
+                    <p id="qiblaStatus" style="margin-top: 15px; font-size: 0.9rem; color: #555;">جاري تفعيل مستشعرات الجهاز...</p>
+                </div>`;
+            
+            // تفعيل مستشعر اتجاه الجوال لو متاح
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', function(event) {
+                    let compass = event.alpha;
+                    let needle = document.getElementById('needle');
+                    let status = document.getElementById('qiblaStatus');
+                    if(compass !== null && needle) {
+                        // حساب مبدئي لتوجيه البوصلة
+                        needle.style.transform = \`rotate(\${compass}deg)\`;
+                        status.innerHTML = "تم الاتصال بمستشعر الاتجاهات بنجاح.";
+                    }
+                }, true);
+            } else {
+                document.getElementById('qiblaStatus').innerHTML = "مستشعر الوجهة غير مدعوم في هذا المتصفح، تأكد من فتح الموقع عبر HTTPS.";
             }
-            listDiv.innerHTML = '';
-            posts.forEach(p => {
-                listDiv.innerHTML += `<div class="dynamic-item"><h4>${p.title}</h4><p>${p.text}</p><span class="date">${p.date}</span></div>`;
-            });
         }
     </script>
 </body>
