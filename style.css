@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f4f9f4;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #d8f3dc;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-right: 5px solid #2d6a4f;
+}
+
+.welcome-card {
+    text-align: center;
+}
+
+.welcome-card h2 {
+    color: #1b4332;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.ayah, .hadith {
+    font-size: 1.25rem;
+    color: #2d6a4f;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.reference {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.section-item {
+    text-align: center;
+    border-right: none;
+    border-top: 5px solid #52b788;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-item h3 {
+    color: #1b4332;
+    margin-bottom: 10px;
+}
+
+.section-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2d6a4f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #1b4332;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1b4332;
+    color: #d8f3dc;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
