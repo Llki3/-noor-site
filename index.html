@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع نور - السنة والقرآن</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1b4332">
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="container">
+            <h1>✨ موقع نور</h1>
+            <p>منهج أهل السنة والجماعة.. على بصيرة من الكتاب والسنة</p>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container">
+        
+        <!-- قسم الآية القرآنية الدقيقة -->
+        <section class="card welcome-card">
+            <h2>📖 آية من الذكر الحكيم</h2>
+            <p class="ayah">﴿ قُلْ إِن كُنتُمْ تُحِبُّ اللَّهَ فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ ۗ وَاللَّهُ غَفُورٌ رَّحِيمٌ ﴾ [آل عمران: 31]</p>
+        </section>
+
+        <!-- قسم الأحاديث الصحيحة (من البخاري ومسلم) -->
+        <section class="card welcome-card">
+            <h2>📜 من صحيح السنة النبوية</h2>
+            <p class="hadith">«مَنْ يُرِدِ اللَّهُ بِه خَيْرًا يُفَقِّهْهُ فِي الدِّينِ»</p>
+            <p class="reference">رواه البخاري (71) ومسلم (1037)</p>
+            
+            <hr style="border: 0; border-top: 1px solid #d8f3dc; margin: 15px 0;">
+            
+            <p class="hadith">«إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى»</p>
+            <p class="reference">رواه البخاري (1) ومسلم (1907)</p>
+        </section>
+
+        <!-- أقسام الموقع الأساسية -->
+        <section class="sections-grid">
+            
+            <div class="card section-item">
+                <h3>📖 المصحف الشريف</h3>
+                <p>تصفح المصحف الإلكتروني المعتمد بدقة عالية (مجمع الملك فهد).</p>
+                <a href="https://quran.ksu.edu.sa" target="_blank" class="btn">فتح المصحف</a>
+            </div>
+
+            <div class="card section-item">
+                <h3>🛡️ حصن المسلم</h3>
+                <p>أذكار الصباح والمساء والأدعية الصحيحة الثابتة عن النبي ﷺ.</p>
+                <button onclick="alert('سيتم إضافة الأذكار كاملة في التحديث القادم إن شاء الله')" class="btn">عرض الأذكار</button>
+            </div>
+
+            <div class="card section-item">
+                <h3>📚 العقيدة الصحيحة</h3>
+                <p>أصول عقيدة أهل السنة والجماعة وفق فهم السلف الصالح.</p>
+                <button onclick="alert('العقيدة المستمدة من كتاب الله وسنة رسوله ﷺ بفهم السلف.')" class="btn">اقرأ المزيد</button>
+            </div>
+
+            <div class="card section-item">
+                <h3>🎧 فتاوى العلماء</h3>
+                <p>مواقع كبار العلماء المعتمدين (ابن باز، ابن عثيمين، الفوزان).</p>
+                <a href="https://binbaz.org.sa" target="_blank" class="btn">موقع الإمام ابن باز</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | موقع نور الإسلامي</p>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('Service Worker Registered Successfully'));
+        }
+    </script>
+</body>
+</html>
